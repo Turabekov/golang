@@ -3,6 +3,9 @@ package main
 import "fmt"
 
 func findMin(sliceNums []int) int {
+	if len(sliceNums) == 0 {
+		return 0
+	}
 
 	minimum := sliceNums[0]
 
@@ -17,7 +20,7 @@ func findMin(sliceNums []int) int {
 
 func main() {
 
-	var slice []int = []int{5, 2, 6, 7}
+	var slice []int = []int{}
 
-	fmt.Printf("Minimum among slice %d is %d", slice, findMin(slice))
+	fmt.Printf("Minimum number among slice %d is %d", slice, findMin(slice))
 }
