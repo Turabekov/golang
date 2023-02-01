@@ -19,7 +19,7 @@ func (h Humans) ageFilter(min, max uint8) ([]Human, string) {
 	var newHuman []Human
 	var message string
 
-	if max > min {
+	if min > max {
 		message = "Please enter correct credentials"
 		return newHuman, message
 	}
@@ -114,6 +114,6 @@ func main() {
 	}
 
 	fmt.Println(humans.ageFilter(20, 40))
-	fmt.Println(humans.nameFilter("dfsdfds"))
+	// fmt.Println(humans.nameFilter("dfsdfds"))
 
 }
