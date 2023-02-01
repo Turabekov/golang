@@ -1,0 +1,55 @@
+1. Foydalanuvchi 2 xonali son kiritadi. 
+Shu 2 xonali sonning raqamlari o'rni almashgan xolda ekranga chiqaring, 
+
+Masalan:
+Input:
+a = 45
+a = 54
+----------------------------------------------------------------------
+
+2. Butun son boladi (musbat ham manfiy ham bo'lishi mumkin). 
+Shu son nechta raqamdan tashkil topganligini ekranga chiqaring
+
+Input:
+658
+
+Output:
+3
+----------------------------------------------------------------------
+
+3. Foydalanuvchi son kiritadi. Shu sonning raqamlari yig'indisini toping.
+
+Input:
+6378
+
+Output:
+24
+----------------------------------------------------------------------
+
+4. Shaxmat doskasida otning dastlabki joylashuv koordinatsi x1 va y1 (1-8 butun son) berilgan. 
+Ot yangi kiritilgan x2 va y2 koordinataga yura oladimi yoki yo’qligini aniqlang. 
+Rasmda otning yurish sxemasi keltirilgan.
+
+IN: x1=4, y1=5 -> x2=6, y2=6
+OUT: Yura oladi
+
+IN: x1=4, y1=5 -> x2=7, y2=4
+OUT: Yura olmaydi
+
+----------------------------------------------------------------------
+5. Foydalanuvchi son kiritadi shu sonning palindrome ekanligini aniqlang.
+Note: teskari o'qilganda ham bir xil sonlar palindrome sonlar deyiladi.
+
+Input:
+565
+
+Ouput:
+"Palindrome"
+
+———————————————
+
+Input:
+322
+
+Output:
+"Not Palindrome"

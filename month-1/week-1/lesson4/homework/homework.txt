@@ -1,0 +1,17 @@
+
+Homework
+
+1. Slice integer ma'lumotni minimum hisoblaysiz
+2. 10 User 
+        name
+        age
+        birthday
+    users.ageFilter(10, 20)
+3. 
+    name: "asadbek"
+    name: "asadullo"
+    name: "asliddin"
+users.nameFilter("as")
+
+
+
