@@ -15,8 +15,14 @@ type Humans struct {
 	humans []Human
 }
 
-func (h Humans) ageFilter(min, max uint8) []Human {
+func (h Humans) ageFilter(min, max uint8) ([]Human, string) {
 	var newHuman []Human
+	var message string
+
+	if max > min {
+		message = "Please enter correct credentials"
+		return newHuman, message
+	}
 
 	for _, human := range h.humans {
 		if human.age >= min && human.age <= max {
@@ -24,7 +30,9 @@ func (h Humans) ageFilter(min, max uint8) []Human {
 		}
 	}
 
-	return newHuman
+	message = "Succes"
+
+	return newHuman, message
 }
 
 func (h Humans) nameFilter(str string) ([]Human, string) {
