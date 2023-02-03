@@ -1,0 +1,5 @@
+
+// Homework
+// 1. 5 ta savol
+// 2. Ball: 1 savol - Togri: 10 ball, Notogri: -5 ball
+// 3. TotalBall: 25 ball
