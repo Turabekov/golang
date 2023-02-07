@@ -18,33 +18,35 @@ import "fmt"
 //         k = 2
 // Output : -1
 
-func returnNonRepeatingElem(arr []int, k int) int {
-	obj := map[int]int{}
+func getKElem(arr []int, k int) int {
+	newMap := make(map[int]int)
 
-	for _, v := range arr {
-		obj[v]++
+	for i := 0; i <  len(arr); i++ {
+		newMap[arr[i]]++
 	}
 
-	// counter := 0
-	fmt.Println(obj)
+	if len(newMap) < k {
+		return -1		
+	}
 
-	for key, v := range obj {
-		// if v == 1 {
-		// 	fmt.Println("key", key)
-		// }
-
-		fmt.Println("key", key, "val", v)
+	counter := 0
+	for i := 0; i <  len(arr); i++ {
+		if newMap[arr[i]] == 1 {
+			counter++
+		}
+		if counter == k {
+			return arr[i]
+		}
 	}
 
 	return -1
+
 }
+
+// ===========================================================================================
 
 func main() {
 	arr := []int{1, 2, 50, 10, 20, 2}
 
-	for i, v := range arr {
-		fmt.Println(i, v)
-	}
-
-	fmt.Println(returnNonRepeatingElem(arr, 3))
+	fmt.Println(getKElem(arr, 2))
 }

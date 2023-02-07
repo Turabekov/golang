@@ -10,26 +10,52 @@ import "fmt"
 // Output:  3
 // Explanation: Pairs with sum 6 are (1, 5), (7, -1) & (1, 5).
 
-func sample(arr []int, sum int) int {
-	var counter = 0
+// func sample(arr []int, sum int) int {
+// 	var counter = 0
 
-	for _, v := range arr {
-		for i := 0; i < len(arr); i++ {
-			if v == arr[i] {
-				continue
-			}
+// 	for _, v := range arr {
+// 		for i := 0; i < len(arr); i++ {
+// 			if v == arr[i] {
+// 				continue
+// 			}
 
-			if v+arr[i] == sum {
-				counter++
-			}
+// 			if v+arr[i] == sum {
+// 				counter++
+// 			}
+// 		}
+// 	}
+
+// 	return counter / 2
+// }
+// O(n*n) 
+// ==============================================================
+func getPairsCount(arr []int, sum int) int {
+	newMap := make(map[int]int)
+	count := 0
+
+	for i := 0; i < len(arr); i++ {
+		_, ok := newMap[sum - arr[i]]
+		if ok {
+			count += newMap[sum - arr[i]]
+		}
+
+		_, ok2 := newMap[arr[i]]
+		if ok2 {
+			newMap[arr[i]] = newMap[arr[i]] + 1
+		} else {
+			newMap[arr[i]] = 1
 		}
 	}
 
-	return counter / 2
+	return count
+
+
 }
+// O(n)
+
 
 func main() {
-	arr := []int{1, 5, 7, -1, 5}
+	arr := []int{1, 5, 7, -1}
 
-	fmt.Println(sample(arr, 6))
+	fmt.Println(getPairsCount(arr, 6))
 }

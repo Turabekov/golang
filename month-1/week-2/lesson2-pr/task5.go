@@ -18,14 +18,23 @@ func sample(arr []int, k int) {
 				continue
 			}
 			if v%arr[i] == 3 {
-
 				fmt.Printf("(%d %d) \t", v, arr[i])
 			}
 		}
 	}
 
 }
+// O(n*n)
+// ==============================================================
+// func sample(arr []int, k int) {
+// 	newMap := make(map[int][]int)
+// 	for i := 0; i < len(arr); i++ {
+		
+// 	}
 
+// }
+O(n)
+//====================================================
 func main() {
 	arr := []int{2, 3, 5, 4, 7}
 

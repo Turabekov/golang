@@ -11,8 +11,10 @@ func numIdenticalPairs(nums []int) int {
 		newMap[num]++
 	}
 
-	return counter
+	fmt.Println(newMap)
 
+
+	return counter
 }
 
 func main() {
