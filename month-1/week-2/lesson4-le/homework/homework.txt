@@ -1,0 +1,7 @@
+// LikedList
+  DeletedData(45)
+
+// Stack-LinkedList
+  push()
+  pop()
+  clear()
