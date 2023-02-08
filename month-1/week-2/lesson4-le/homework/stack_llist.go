@@ -29,16 +29,17 @@ func (s *Stack_LinkedList) push(data int) {
 	s.len++
 }
 // removing element in first position
-func (s *Stack_LinkedList) pop() {
+func (s *Stack_LinkedList) pop() int {
 
 	if s.len == 0 {
 		fmt.Println("No data for deleting")
-		return
+		return 0
 	}
 
 	ptr := s.head
 	s.head = ptr.next
 	s.len--
+	return ptr.data
 }
 
 // clear stack
@@ -87,8 +88,9 @@ func main(){
 	stack.push(10)
 	stack.print()
 	// pop
+	fmt.Println("Deleted elem:", stack.pop())
+	fmt.Println("Deleted elem:", stack.pop())
 	fmt.Println("After deleted first elem")
-	stack.pop()
 	stack.print()
 	// clear
 	stack.clear()
@@ -96,8 +98,8 @@ func main(){
 	stack.print()
 
 
-	stack.push(5)
-	stack.push(6)
+	stack.push(12)
+	stack.push(13)
 	stack.print()
 
 
