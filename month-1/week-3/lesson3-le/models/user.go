@@ -1,12 +1,16 @@
 package models
 
 type User struct {
-	Id      int
-	Name    string
-	Surname string
+	Id       int
+	Birthday string
+	Name     string
+	Surname  string
 }
 
 type GetListRequest struct {
-	Offset int
-	Limit  int
+	Offset   int
+	Limit    int
+	Search   string
+	FromDate string
+	ToDate   string
 }
