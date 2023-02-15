@@ -23,3 +23,32 @@ func (c *Controller) GetList(req *models.GetListRequest) (*models.GetListRespons
 
 	return users, nil
 }
+
+func (c *Controller) GetUserByIdController(req *models.UserPrimaryKey) (models.User, error) {
+	user, err := c.store.User.GetUserById(req)
+	if err != nil {
+		return models.User{}, err
+	}
+
+	return user, nil
+
+}
+
+func (c *Controller) UpdateUserController(req *models.UpdateUser) (models.User, error) {
+	user, err := c.store.User.UpdateUser(req)
+	if err != nil {
+		return models.User{}, err
+	}
+
+	return user, nil
+
+}
+func (c *Controller) DeleteUserController(req *models.UserPrimaryKey) (models.User, error) {
+	user, err := c.store.User.DeleteUser(req)
+	if err != nil {
+		return models.User{}, err
+	}
+
+	return user, nil
+
+}

@@ -6,12 +6,12 @@
    },
    {
       "id": 2,
-      "name": "Abduqodir",
-      "surname": "Musayev"
+      "name": "Khumoyun",
+      "surname": "Turabekov"
    },
    {
       "id": 3,
-      "name": "Abduqodir",
+      "name": "Shokhrukh",
       "surname": "Musayev"
    },
    {
@@ -21,18 +21,18 @@
    },
    {
       "id": 5,
-      "name": "Abduqodir",
-      "surname": "Musayev"
+      "name": "Mirazam",
+      "surname": "Muzaffarov"
    },
    {
       "id": 6,
-      "name": "Abduqodir",
-      "surname": "Musayev"
+      "name": "Marcus",
+      "surname": "Rashford"
    },
    {
       "id": 7,
-      "name": "Abduqodir",
-      "surname": "Musayev"
+      "name": "Wayne",
+      "surname": "Rooney"
    },
    {
       "id": 8,
@@ -86,11 +86,6 @@
    },
    {
       "id": 18,
-      "name": "Abduqodir",
-      "surname": "Musayev"
-   },
-   {
-      "id": 19,
       "name": "Abduqodir",
       "surname": "Musayev"
    }
