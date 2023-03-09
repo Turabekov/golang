@@ -4,16 +4,18 @@
 -- SUM() foydalansiz
 
 
-CREATE OR REPLACE FUNCTION get_price_all_films() RETURNS VOID LANGUAGE PLPGSQL
+CREATE OR REPLACE FUNCTION get_price_all_films() RETURNS TABLE(
+    film_name VARCHAR,
+    total_amount NUMERIC
+) LANGUAGE PLPGSQL
     AS
 $$
     DECLARE
-        filmTitle film.title%type;
-        sum NUMERIC;
+        filmData record;
     BEGIN
         
 
-    FOR filmTitle, sum IN (
+    FOR filmData IN (
         SELECT film.title, ROUND(SUM(payment.amount), 4) AS sum
         FROM film
         JOIN inventory ON inventory.film_id = film.film_id
@@ -22,12 +24,10 @@ $$
         GROUP BY film.title
         ORDER BY film.title
     ) LOOP
-        raise info '%. %', filmTitle, sum;
-
+        film_name := filmData.title;
+        total_amount := filmData.sum;
+        return next;
     END LOOP;
-
-    return;
-
     END;
 $$;
 
