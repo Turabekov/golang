@@ -66,7 +66,10 @@ $$;
 -- -----------+-------------
 --     avatar | {Chungho, Hanoi, Rio Claro, Tashkent}
 
-CREATE OR REPLACE FUNCTION get_customer_country() RETURNS VOID LANGUAGE PLPGSQL
+CREATE OR REPLACE FUNCTION get_customer_country() RETURNS TABLE (
+    film_name VARCHAR,
+    countries VARCHAR[]
+) LANGUAGE PLPGSQL
     AS
 $$
     DECLARE
@@ -85,9 +88,10 @@ $$
             GROUP BY film.title
             ORDER BY film.title
         ) LOOP
-            raise info 'Name: %. Countries: %', filmTitle, arr_country;
+            film_name = filmTitle;
+            countries = arr_country;
+            return next;
         END LOOP;
-        return;
     END;
 $$;
 
