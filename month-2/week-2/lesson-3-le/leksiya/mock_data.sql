@@ -43,7 +43,7 @@ client_took -> cancelled
 
 
 
-
+--------------------------------------------------------------------------------------------------------
 car
     mileage = 12000 KM
     day_limit = 200 KM
@@ -52,9 +52,8 @@ car
 
 
 orders
-    day = 2
+    day_count = 2
     paid_price = 400_000
-
 
 TRIGGER
     perelimit()

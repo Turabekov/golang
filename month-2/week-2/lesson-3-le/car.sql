@@ -72,22 +72,22 @@ INSERT INTO orders (
     to_date
 ) VALUES (
     'e479aa14-0ff5-48d9-b863-9f42442d4b1b',
-    '0ba74bd0-cc38-4726-8393-da6cc5daeab2',
+    '69340dda-6cd0-403f-b3c8-9abce3873622',
     2,
     (
         SELECT
             price * 2
         FROM car
-        WHERE id = '0ba74bd0-cc38-4726-8393-da6cc5daeab2'
+        WHERE id = '69340dda-6cd0-403f-b3c8-9abce3873622'
     ),
     'new',
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP + INTERVAL '2 day'
 );
 
-UPDATE orders SET status = 'new' WHERE id = '2ad0d1b6-b3c7-489e-a6a8-dd261ec39f15';
-UPDATE orders SET status = 'client_took' WHERE id = 'db4f1c81-a472-4fc8-8eaf-8b3c840083b4';
-UPDATE orders SET status = 'client_returned', receive_km = 55600 WHERE id = 'db4f1c81-a472-4fc8-8eaf-8b3c840083b4';
+UPDATE orders SET status = 'new' WHERE id = 'badae641-11d5-446a-847d-616851366592';
+UPDATE orders SET status = 'client_took' WHERE id = 'badae641-11d5-446a-847d-616851366592';
+UPDATE orders SET status = 'client_returned', receive_km = 2601, paid_price = 900000 WHERE id = 'badae641-11d5-446a-847d-616851366592';
 
 
 
