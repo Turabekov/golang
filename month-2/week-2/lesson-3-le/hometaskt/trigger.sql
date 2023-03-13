@@ -34,13 +34,8 @@ $$
     DECLARE
         var_r record;
     BEGIN
-        for var_r in(
-            select 
-            customer_id, 
-            debt,
-            created_at
-            FROM client_cost
-        ) loop  
+        for var_r in SELECT client_cost.customer_id, client_cost.debt, client_cost.created_at FROM client_cost
+        loop  
             customer_id := var_r.customer_id; 
 		    debt := var_r.debt;
             created_at := var_r.created_at;
