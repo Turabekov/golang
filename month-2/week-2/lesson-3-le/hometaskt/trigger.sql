@@ -21,3 +21,30 @@ $$;
 CREATE TRIGGER customer_perelimit_tg
 BEFORE UPDATE ON orders
 FOR EACH ROW EXECUTE PROCEDURE perelimit();
+
+
+CREATE OR REPLACE FUNCTION debtor() returns 
+table(  
+    customer_id UUID,
+    debt NUMERIC,
+    created_at TIMESTAMP
+) LANGUAGE PLPGSQL
+    AS
+$$
+    DECLARE
+        var_r record;
+    BEGIN
+        for var_r in(
+            select 
+            customer_id, 
+            debt,
+            created_at
+            FROM client_cost
+        ) loop  
+            customer_id := var_r.customer_id; 
+		    debt := var_r.debt;
+            created_at := var_r.created_at;
+            return next;
+	    end loop;
+    END;
+$$;

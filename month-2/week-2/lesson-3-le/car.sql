@@ -82,15 +82,13 @@ INSERT INTO orders (
     ),
     'new',
     CURRENT_TIMESTAMP,
-    CURRENT_TIMESTAMP + INTERVAL '2 day'
+    CURRENT_TIMESTAMP + INTERVAL '2 day'            
 );
 
 UPDATE orders SET status = 'new' WHERE id = 'badae641-11d5-446a-847d-616851366592';
 UPDATE orders SET status = 'client_took' WHERE id = 'badae641-11d5-446a-847d-616851366592';
 UPDATE orders SET status = 'client_returned', receive_km = 2601, paid_price = 900000 WHERE id = 'badae641-11d5-446a-847d-616851366592';
-
-
-
+    
 new -> client_took -> client_returned -> success
 new -> cancelled
 client_took -> cancelled
