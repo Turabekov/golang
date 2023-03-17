@@ -1,0 +1,62 @@
+
+API - Application Programming Interface
+
+SOAP
+    http -> XML
+
+RESTFULL API
+    http -> JSON
+
+    REQUEST
+        -> 
+        HTTP VERB
+            GET
+            POST
+            PUT
+            PATCH
+            DELETE
+            HEAD
+
+    RESPONSE
+        <- Status
+        100 - Information status
+            100 -> StatusContinue
+            101 -> StatusSwitchingProtocols
+        200 - Success status
+            200 -> OK
+            201 -> Created
+            202 -> StatusAccepted
+            204 -> StatusNoContent
+        300 - Redirect status
+            304 -> StatusNotModified
+        400 - Client Error
+            400 -> BadRequest
+            401 -> StatusUnauthorized
+            403 -> StatusForbidden
+            404 -> Not Found
+            405 -> StatusMethodNotAllowed
+        500 - Server Error
+            500 -> StatusInternalServerError
+            502 -> StatusBadGateway
+
+INTERNET PROTOCOL
+IP
+TCP 
+    C1     C2
+      <- ->
+UDP
+    C1     C2
+    -->
+SSH
+FTP
+SCP
+SMTP
+
+HTTP
+    JSON
+
+
+
+
+
+
