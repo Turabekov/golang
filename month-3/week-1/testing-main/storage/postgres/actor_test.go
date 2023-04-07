@@ -19,8 +19,8 @@ func TestCreateActor(t *testing.T) {
 		{
 			Name: "Case 1",
 			Input: &models.CreateActor{
-				First_name: "Khumoyun",
-				Last_name:  "Turabekov",
+				First_name: "Asadbek",
+				Last_name:  "Ergashev",
 			},
 			WantErr: false,
 		},
@@ -78,6 +78,8 @@ func TestGetByIDActor(t *testing.T) {
 		t.Run(test.Name, func(t *testing.T) {
 
 			actor, err := actorTestRepo.GetByPKey(context.Background(), test.Input)
+
+			// if err == pgx.ErrNoRows {} if data not exists
 
 			if test.WantErr {
 				t.Errorf("%s: got: %v", test.Name, err)
